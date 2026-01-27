@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Ordering Form</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+    
+        .container {
+            border: 2px solid #000;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+    
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        table,
+        th,
+        td {
+            border: 3px double #000;
+        }
+    
+        th,
+        td {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Pizza Ordering Form</h1>
+
+            <form id="pizzaForm" novalidate>
+                <section>
+                    <h2>Contact Information</h2>
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+
+                    <label for="phone">Phone: </label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <br>
+
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required>
+                </section>
+
+                <section>
+                    <h2>Select Pizza Size</h2>
+                    <label for="pizzaSize">Pizza Size: </label>
+                    <select id="pizzaSize" name="pizzaSize" required>
+                        <option value="">Select Size</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="xlarge">XLarge</option>
+                    </select>
+                </section>
+
+                <section>
+                    <h2>Select Sauce</h2>
+                    <div>
+                        <input type="radio" id="noSauce" name="sauce" value="none" required>
+                        <label for="noSauce">No Sauce</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="marinara" name="sauce" value="marinara" required>
+                        <label for="marinara">Marinara Sauce</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="whiteSauce" name="sauce" value="white" required>
+                        <label for="whiteSauce">White Sauce</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="bbqSauce" name="sauce" value="bbq" required>
+                        <label for="bbqSauce">BBQ Sauce</label>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Select Toppings</h2>
+                    <div>
+                        <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+                        <label for="pepperoni">Pepperoni</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+                        <label for="mushrooms">Mushrooms</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sausage" name="toppings" value="sausage">
+                        <label for="sausage">Italian Sausage</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="peppers" name="toppings" value="peppers">
+                        <label for="peppers">Bell Peppers</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="onions" name="toppings" value="onions">
+                        <label for="onions">Red Onions</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="olives" name="toppings" value="olives">
+                        <label for="olives">Black Olives</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="cheese" name="toppings" value="extraCheese">
+                        <label for="cheese">Extra Cheese</label>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Additional Instructions</h2>
+                    <textarea id="instructions" name="instructions" rows="4" placeholder="Add instructions"></textarea>
+                </section>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>List of My Favorite Games</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Developer</th>
+                        <th>Title</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Naughty Dog</td>
+                        <td>The Last of Us</td>
+                        <td>2013</td>
+                    </tr>
+                    <tr>
+                        <td>The Last of Us Part II</td>
+                        <td>2020</td>
+                    </tr>
+                    <tr>
+                        <td>Valve Corporation</td>
+                        <td>Portal 2</td>
+                        <td>2011</td>
+                    </tr>
+                    <tr>
+                        <td>Don't Nod</td>
+                        <td>Life is Strange</td>
+                        <td>2015</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total Games: 4</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pizzaForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form elements
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const pizzaSize = document.getElementById('pizzaSize').value;
+            const sauce = document.querySelector('input[name="sauce"]:checked');
+
+            // Validation
+            let isValid = true;
+            let errorMessage = '';
+
+            if (!name) {
+                isValid = false;
+                errorMessage += 'Name is required.\n';
+            }
+
+            if (!phone) {
+                isValid = false;
+                errorMessage += 'Phone number is required.\n';
+            }
+
+            if (!email) {
+                isValid = false;
+                errorMessage += 'Email address is required.\n';
+            }
+
+            if (!pizzaSize) {
+                isValid = false;
+                errorMessage += 'Pizza size must be selected.\n';
+            }
+
+            if (!sauce) {
+                isValid = false;
+                errorMessage += 'Sauce type must be selected.\n';
+            }
+
+            if (!isValid) {
+                alert('Please fix the following errors:\n\n' + errorMessage);
+                return;
+            }
+
+            // If validation passes
+            alert('Thank you! Your pizza order has been submitted successfully.');
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

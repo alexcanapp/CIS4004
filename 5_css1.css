@@ -1,0 +1,102 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set default font styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: black;
+    background-color: #B6D7E4;
+}
+
+/* main header, larde, bold, center */
+h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: black;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: black;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* text centered in box and in line on left, with white background, black text, and thin green border */
+p.paragraph2 {
+    background-color: white;
+    color: black;
+    border: 5px solid green;
+    text-align: left;
+    padding: 20px;
+}
+
+/* adjust p4 and p5 colors */
+p.blue {
+    background-color: #000B7B;
+    color: white;
+    text-align: left;
+    border: 1px solid rgb(1, 1, 51);
+    padding: 15px;
+}
+
+/* list uses 2 numbers */
+ol {
+    list-style-type: decimal-leading-zero;
+    margin-left: 20px;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* link outside of list use red color */
+a.rlink {
+    color: rgb(175, 0, 0);
+    text-decoration: underline;
+}
+
+/* table has black black borders around everything, 
+column names are bold and have grey background, cells have white background,
+text is centered */
+table {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+th {
+    background-color: #D3D3D3;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+td {
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}

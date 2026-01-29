@@ -48,6 +48,7 @@ p.paragraph2 {
     border: 5px solid green;
     text-align: left;
     padding: 20px;
+    margin: 5px;
 }
 
 /* adjust p4 and p5 colors */

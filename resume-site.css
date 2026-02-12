@@ -1,0 +1,253 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #5b6fc7 0%, #6b5b9e 100%);
+    min-height: 100vh;
+}
+
+/* Mobile-first layout (412px) */
+header {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 24px;
+    margin: 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+header address {
+    font-style: normal;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
+header a {
+    color: #f5d98f;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+header a:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+main {
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin: 1.5rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+section {
+    margin-bottom: 2.5rem;
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: #5b6fc7;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #5b6fc7, #6b5b9e);
+    border-radius: 2px;
+}
+
+h3 {
+    color: #2d3748;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+article {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f7f8fa;
+    border-radius: 16px;
+    border-left: 3px solid #5b6fc7;
+    transition: all 0.3s ease;
+}
+
+#projects article:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(91, 111, 199, 0.15);
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+article p {
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-top: 0.75rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+}
+
+a {
+    color: #5b6fc7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(91, 111, 199, 0.3);
+}
+
+a:hover {
+    color: #6b5b9e;
+    border-bottom-color: #6b5b9e;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 1.5rem 1rem 1rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Skills section - stacked on mobile */
+#skills section {
+    margin-bottom: 1.5rem;
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-left: 0;
+}
+
+#skills li {
+    background: linear-gradient(135deg, #5b6fc7 0%, #6b5b9e 100%);
+    color: white;
+    padding: 0.65rem 1.3rem;
+    border-radius: 24px;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(91, 111, 199, 0.2);
+}
+
+#skills li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(91, 111, 199, 0.35);
+}
+
+/* Desktop layout (1920px and above) */
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 2rem 0;
+    }
+
+    header {
+        padding: 5rem 3rem;
+        margin: 0 auto 2rem;
+        border-radius: 32px;
+        max-width: 1200px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    main {
+        max-width: 1200px;
+        padding: 4rem;
+        margin: 2rem auto;
+        border-radius: 32px;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Three-column layout for skills section */
+    #skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    #skills h2 {
+        grid-column: 1 / -1;
+    }
+
+    article {
+        padding: 2rem;
+    }
+
+    ul {
+        margin-left: 2rem;
+    }
+
+    footer {
+        padding: 3.5rem 3rem;
+        margin: 2rem auto 0;
+        border-radius: 32px;
+        max-width: 1200px;
+    }
+}

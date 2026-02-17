@@ -1,4 +1,3 @@
-// When the user clicks the "Filter Articles" button, a menu appears with the checkboxes to filter. 
 function showFilter() {
     if (document.getElementById("filterContent").style.display === "block") {
         document.getElementById("filterContent").style.display = "none";
@@ -8,8 +7,6 @@ function showFilter() {
     }
 }
 
-// When the user checks/unchecks a box for filtering, each of the articles of that type are hidden/shown accordingly.
-// opinionCheckbox, reciepCheckbox, updateCheckbox 
 function filterArticles() {
     let opinionChecked = document.getElementById("opinionCheckbox").checked;
     let recipeChecked = document.getElementById("recipeCheckbox").checked;
@@ -48,7 +45,7 @@ function addNewArticle() {
     else if (document.getElementById("recipeRadio").checked) {
         type = "recipe";
     }
-    else if (document.getElementById("updateRadio").checked) {
+    else if (document.getElementById("lifeRadio").checked) {
         type = "update";
     }
     let content = document.getElementById("inputArticle").value

@@ -48,7 +48,7 @@ function addNewArticle() {
     else if (document.getElementById("lifeRadio").checked) {
         type = "update";
     }
-    let content = document.getElementById("inputArticle").value
+    let content = document.getElementById("inputArticle").value;
     let newArticle = document.createElement("article");
     newArticle.className = type;
     newArticle.id = "a" + (document.getElementById("articleList").children.length + 1);

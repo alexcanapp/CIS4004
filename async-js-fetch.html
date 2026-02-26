@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Team Builder</title>
+    <link rel="stylesheet" href="async-js-fetch.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pokemon Team Builder</h1>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <h2>Search Pokemon</h2>
+            <div class="search-form">
+                <input type="text" id="pokemonInput" placeholder="Enter Pokemon name or ID (1-151)">
+                <button id="searchBtn">Search</button>
+            </div>
+            <div id="errorMessage" class="error"></div>
+        </div>
+
+        <!-- Pokemon Display Section -->
+        <div id="pokemonDisplay" class="pokemon-display">
+            <div class="pokemon-info">
+                <div class="pokemon-left">
+                    <img id="pokemonImage" src="" alt="Pokemon">
+                    <div class="audio-section">
+                        <label>Pokemon Cry:</label>
+                        <audio id="pokemonCry" controls></audio>
+                    </div>
+                </div>
+                <div class="pokemon-right">
+                    <h2 id="pokemonName"></h2>
+                    <p><strong>ID:</strong> <span id="pokemonId"></span></p>
+                    <p><strong>Type:</strong> <span id="pokemonType"></span></p>
+                    <p><strong>Height:</strong> <span id="pokemonHeight"></span></p>
+                    <p><strong>Weight:</strong> <span id="pokemonWeight"></span></p>
+                </div>
+            </div>
+
+            <!-- Moves Section -->
+            <div class="moves-section">
+                <h3>Select 4 Moves:</h3>
+                <div class="moves-grid">
+                    <div class="move-wrapper">
+                        <label for="move1">Move 1:</label>
+                        <select id="move1">
+                            <option value="">-- Select Move --</option>
+                        </select>
+                    </div>
+                    <div class="move-wrapper">
+                        <label for="move2">Move 2:</label>
+                        <select id="move2">
+                            <option value="">-- Select Move --</option>
+                        </select>
+                    </div>
+                    <div class="move-wrapper">
+                        <label for="move3">Move 3:</label>
+                        <select id="move3">
+                            <option value="">-- Select Move --</option>
+                        </select>
+                    </div>
+                    <div class="move-wrapper">
+                        <label for="move4">Move 4:</label>
+                        <select id="move4">
+                            <option value="">-- Select Move --</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="addToTeamBtn" class="add-to-team-btn">Add to Team</button>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2>My Team (<span id="teamCount">0</span>/6)</h2>
+            <div id="teamGrid" class="team-grid"></div>
+        </div>
+    </div>
+
+    <script src="async-js-fetch.js"></script>
+</body>
+
+</html>
